@@ -31,6 +31,12 @@
                     <td>{{ $student->course }}</td>
                     <td>
                         <a href="{{ route('students.edit', $student) }}">Edit</a>
+
+                        <form action ="{{ route('students.destroy', $student) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @empty
