@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
+Route::resource('students', StudentController::class);
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('basta');
 });
 
 Route::get('/dashboard', function () {
